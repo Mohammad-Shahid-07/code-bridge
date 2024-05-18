@@ -1,10 +1,12 @@
-import Tranformer from "@/components/Tranformer";
-import { Textarea } from "@/components/ui/textarea";
+import { fetchingData } from '@/actions/feching-data';
+import Tranformer from '@/components/Tranformer';
 
-export default function Home() {
+export default async function Home() {
+  const data = await fetchingData();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     <Tranformer />
+    <main className="flex min-h-screen flex-col items-center justify-between p-5">
+      <Tranformer />
     </main>
   );
 }
